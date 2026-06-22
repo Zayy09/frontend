@@ -15,6 +15,8 @@ $currentMenu = $currentMenu ?? '';
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <?= $extraHead ?? '' ?>
 </head>
 <body>
@@ -22,8 +24,12 @@ $currentMenu = $currentMenu ?? '';
 <!-- Top Navbar -->
 <header class="top-navbar">
     <div class="nav-brand">
-        <a href="index.php">
-            <img src="assets/img/logo.png" alt="BAMUK Logo">
+        <a href="index.php" class="brand-logo-container">
+            <img src="assets/img/Logo.png" alt="BAMUK Logo" class="brand-logo-img">
+            <div class="brand-text">
+                <span class="brand-text-top">Basmi</span>
+                <span class="brand-text-top">Nyamuk</span>
+            </div>
         </a>
     </div>
     
@@ -45,8 +51,8 @@ $currentMenu = $currentMenu ?? '';
             <span>Edukasi</span>
         </a>
         <a href="search.php" class="nav-item <?= $currentMenu === 'search' ? 'active' : '' ?>">
-            <i class="ph-bold ph-magnifying-glass"></i>
-            <span>Pencarian</span>
+            <i class="ph-fill ph-magnifying-glass"></i>
+            <span>Search</span>
         </a>
 
     </nav>

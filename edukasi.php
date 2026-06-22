@@ -13,17 +13,17 @@ $edukasiList = $apiResponse['success'] ? $apiResponse['data'] : [];
 $extraHead = '
 <style>
 .edu-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: linear-gradient(135deg, var(--green-mid), var(--green-dark));
     color: white;
     padding: 3rem;
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius);
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
 }
 .edu-hero h2 { color: white; font-size: 2.5rem; margin-bottom: 1rem; }
-.edu-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.edu-hero p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; color: white; }
 .edu-bg-icon {
     position: absolute;
     font-size: 15rem;
@@ -45,8 +45,8 @@ $extraHead = '
 .icon-wrapper {
     width: 80px;
     height: 80px;
-    background: var(--primary-light);
-    color: var(--primary-dark);
+    background: var(--green-bg);
+    color: var(--green-dark);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -57,14 +57,14 @@ $extraHead = '
 }
 .card-3m:hover .icon-wrapper {
     transform: scale(1.1);
-    background: var(--primary-color);
+    background: var(--green-mid);
     color: white;
 }
 .plus-section {
-    background: var(--risk-low-bg);
-    border-radius: var(--radius-lg);
+    background: var(--green-bg);
+    border-radius: var(--radius);
     padding: 2rem;
-    border: 1px dashed var(--primary-color);
+    border: 1px dashed var(--green-mid);
 }
 .plus-list {
     list-style: none;
@@ -79,9 +79,9 @@ $extraHead = '
     gap: 0.75rem;
     background: white;
     padding: 1rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    color: var(--risk-low-text);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    color: var(--text-dark);
     font-weight: 500;
 }
 
@@ -90,7 +90,7 @@ $extraHead = '
     margin-top: 3rem;
 }
 .artikel-title {
-    color: var(--primary-dark);
+    color: var(--green-dark);
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -102,8 +102,8 @@ $extraHead = '
 }
 .artikel-card {
     background: white;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -111,7 +111,7 @@ $extraHead = '
 }
 .artikel-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
 .artikel-img {
     width: 100%;
@@ -129,13 +129,13 @@ $extraHead = '
     font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--green-mid);
     margin-bottom: 0.5rem;
     letter-spacing: 0.5px;
 }
 .artikel-judul {
     font-size: 1.2rem;
-    color: var(--text-main);
+    color: var(--text-dark);
     margin-bottom: 1rem;
     line-height: 1.4;
 }
@@ -150,13 +150,13 @@ $extraHead = '
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    color: var(--green-dark);
     font-weight: 600;
     text-decoration: none;
     transition: color 0.2s;
 }
 .btn-baca:hover {
-    color: var(--primary-dark);
+    color: #0d4f4b;
 }
 </style>
 ';
@@ -192,17 +192,17 @@ include 'includes/header.php';
 
 <div class="plus-section animate-fade-in delay-2">
     <div style="text-align: center;">
-        <h3 style="color: var(--primary-dark); font-size: 1.75rem;">Apa saja yang termasuk "Plus"?</h3>
-        <p style="color: var(--primary-dark); opacity: 0.8; margin-top: 0.5rem;">Segala bentuk kegiatan pencegahan tambahan selain 3M</p>
+        <h3 style="color: var(--green-dark); font-size: 1.75rem;">Apa saja yang termasuk "Plus"?</h3>
+        <p style="color: var(--green-dark); opacity: 0.8; margin-top: 0.5rem;">Segala bentuk kegiatan pencegahan tambahan selain 3M</p>
     </div>
     
     <ul class="plus-list">
-        <li><i class="ph-fill ph-check-circle" style="color: var(--primary-color); font-size: 1.5rem;"></i> Memelihara ikan pemakan jentik</li>
-        <li><i class="ph-fill ph-check-circle" style="color: var(--primary-color); font-size: 1.5rem;"></i> Menggunakan obat anti nyamuk</li>
-        <li><i class="ph-fill ph-check-circle" style="color: var(--primary-color); font-size: 1.5rem;"></i> Memasang kawat kasa pada jendela</li>
-        <li><i class="ph-fill ph-check-circle" style="color: var(--primary-color); font-size: 1.5rem;"></i> Gotong royong membersihkan lingkungan</li>
-        <li><i class="ph-fill ph-check-circle" style="color: var(--primary-color); font-size: 1.5rem;"></i> Memeriksa tempat penampungan air</li>
-        <li><i class="ph-fill ph-check-circle" style="color: var(--primary-color); font-size: 1.5rem;"></i> Menanam tanaman pengusir nyamuk</li>
+        <li><i class="ph-fill ph-check-circle" style="color: var(--green-mid); font-size: 1.5rem;"></i> Memelihara ikan pemakan jentik</li>
+        <li><i class="ph-fill ph-check-circle" style="color: var(--green-mid); font-size: 1.5rem;"></i> Menggunakan obat anti nyamuk</li>
+        <li><i class="ph-fill ph-check-circle" style="color: var(--green-mid); font-size: 1.5rem;"></i> Memasang kawat kasa pada jendela</li>
+        <li><i class="ph-fill ph-check-circle" style="color: var(--green-mid); font-size: 1.5rem;"></i> Gotong royong membersihkan lingkungan</li>
+        <li><i class="ph-fill ph-check-circle" style="color: var(--green-mid); font-size: 1.5rem;"></i> Memeriksa tempat penampungan air</li>
+        <li><i class="ph-fill ph-check-circle" style="color: var(--green-mid); font-size: 1.5rem;"></i> Menanam tanaman pengusir nyamuk</li>
     </ul>
 </div>
 
