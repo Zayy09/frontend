@@ -1,0 +1,31 @@
+Options -MultiViews
+RewriteEngine On
+
+# Redirect ke HTTPS (opsional, nonaktifkan jika Laragon tidak pakai SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Izinkan akses ke file yang ada secara langsung
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Tambahkan header keamanan
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+
+# Izinkan CORS dari localhost (untuk pengembangan)
+Header always set Access-Control-Allow-Origin "http://localhost:8000"
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type, Accept"
+
+# Cache statis aset (gambar, CSS, JS)
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2)$">
+    Header set Cache-Control "max-age=86400, public"
+</FilesMatch>
+
+# Nonaktifkan listing direktori
+Options -Indexes
+
+# Error document kustom (opsional)
+# ErrorDocument 404 /404.php
